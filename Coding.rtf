@@ -1,0 +1,446 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2759
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red252\green93\blue186;\red23\green23\blue23;\red202\green202\blue202;
+\red72\green255\blue104;\red255\green255\blue255;\red174\green122\blue247;\red70\green137\blue204;\red30\green30\blue30;
+\red67\green192\blue160;\red212\green214\blue154;\red140\green211\blue254;\red194\green126\blue101;\red183\green111\blue179;
+\red167\green197\blue152;\red238\green252\blue122;\red87\green87\blue87;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c47451\c77647;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c31373\c98039\c48235;\cssrgb\c100000\c100000\c100000;\cssrgb\c74118\c57647\c97647;\cssrgb\c33725\c61176\c83922;\cssrgb\c15686\c15686\c15686;
+\cssrgb\c30588\c78824\c69020;\cssrgb\c86275\c86275\c66667;\cssrgb\c61176\c86275\c99608;\cssrgb\c80784\c56863\c47059;\cssrgb\c77255\c52549\c75294;
+\cssrgb\c70980\c80784\c65882;\cssrgb\c94510\c98039\c54902;\cssrgb\c41623\c41623\c41519;\cssrgb\c100000\c100000\c100000\c0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww34360\viewh21600\viewkind0
+\deftab720
+{\*\background {\shp{\*\shpinst\shpleft0\shptop0\shpright0\shpbottom0\shpfhdr0\shpbxmargin\shpbymargin\shpwr0\shpwrk0\shpfblwtxt1\shpz0\shplid1025{\sp{\sn shapeType}{\sv 1}}{\sp{\sn fFlipH}{\sv 0}}{\sp{\sn fFlipV}{\sv 0}}{\sp{\sn fillColor}{\sv 2500134}}{\sp{\sn fFilled}{\sv 1}}{\sp{\sn lineWidth}{\sv 0}}{\sp{\sn fLine}{\sv 0}}{\sp{\sn bWMode}{\sv 9}}{\sp{\sn fBackground}{\sv 1}}}}}
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+1.Add 1 to a number represented as LL\
+\
+def\cf4  \cf5 addOne\cf6 (\cf5 head\cf6 :\cf4  \cf5 Node\cf6 )\cf4  -> \cf5 Node\cf6 :\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 reverse\cf6 (\cf5 head\cf6 ):\cf4 \cb1 \
+\cb3         \cf5 prev\cf4  = \cf2 None\cf4 \cb1 \
+\cb3         \cf5 pres\cf4  = \cf5 head\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 head\cf6 :\cf4 \cb1 \
+\cb3             \cf2 next\cf4  = \cf5 pres\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf2 while\cf4  \cf5 pres\cf6 :\cf4 \cb1 \
+\cb3             \cf5 pres\cf4 .\cf2 next\cf4  = \cf5 prev\cf4 \cb1 \
+\cb3             \cf5 prev\cf4  = \cf5 pres\cf4 \cb1 \
+\cb3             \cf5 pres\cf4  = \cf2 next\cf4 \cb1 \
+\cb3             \cf2 if\cf4  \cf2 next\cf6 :\cf4 \cb1 \
+\cb3                 \cf2 next\cf4  = \cf2 next\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 prev\cf4 \cb1 \
+\cb3     \cf5 head\cf4  = \cf5 reverse\cf6 (\cf5 head\cf6 )\cf4 \cb1 \
+\cb3     \cf5 carry\cf4  = \cf7 1\cf4 \cb1 \
+\cb3     \cf5 temp\cf4  = \cf5 head\cf4 \cb1 \
+\cb3     \cf2 while\cf4  \cf5 temp\cf6 :\cf4 \cb1 \
+\cb3         \cf5 temp\cf4 .\cf5 data\cf4  = \cf5 temp\cf4 .\cf5 data\cf4  + \cf5 carry\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 temp\cf4 .\cf5 data\cf4  < \cf7 10\cf6 :\cf4 \cb1 \
+\cb3             \cf5 carry\cf4  = \cf7 0\cf4 \cb1 \
+\cb3             \cf2 break\cf4 \cb1 \
+\cb3         \cf2 else\cf6 :\cf4 \cb1 \
+\cb3             \cf5 temp\cf4 .\cf5 data\cf4  = \cf7 0\cf4 \cb1 \
+\cb3             \cf5 carry\cf4  = \cf7 1\cf4 \cb1 \
+\cb3         \cf5 temp\cf4  = \cf5 temp\cf4 .\cf2 next\cf4 \cb1 \
+\cb3     \cf2 if\cf4  \cf5 carry\cf4  == \cf7 1\cf6 :\cf4 \cb1 \
+\cb3         \cf5 node\cf4  = \cf5 Node\cf6 (\cf7 1\cf6 )\cf4 \cb1 \
+\cb3         \cf5 head\cf4  = \cf5 reverse\cf6 (\cf5 head\cf6 )\cf4 \cb1 \
+\cb3         \cf5 node\cf4 .\cf2 next\cf4  = \cf5 head\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 node\cf4 \cb1 \
+\cb3     \cf5 head\cf4  = \cf5 reverse\cf6 (\cf5 head\cf6 )\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 head\cf4 \cb1 \
+\
+Time Complexity = O(3N) (N for reversing + N for traversing + N for reversing again)\
+Space = O(1)\
+\
+Using Recursion:\
+\cf2 \cb3 def\cf4  \cf5 addOne\cf6 (\cf5 head\cf6 :\cf4  \cf5 Node\cf6 )\cf4  -> \cf5 Node\cf6 :\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 rec\cf6 (\cf5 head\cf6 ):\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 head\cf4  \cf2 is\cf4  \cf2 None\cf6 :\cf4 \cb1 \
+\cb3             \cf2 return\cf4  \cf7 1\cf4 \cb1 \
+\cb3         \cf5 carry\cf4  = \cf5 rec\cf6 (\cf5 head\cf4 .\cf2 next\cf6 )\cf4 \cb1 \
+\cb3         \cf5 head\cf4 .\cf5 data\cf4  = \cf5 head\cf4 .\cf5 data\cf4  + \cf5 carry\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 head\cf4 .\cf5 data\cf4  < \cf7 10\cf6 :\cf4 \cb1 \
+\cb3             \cf2 return\cf4  \cf7 0\cf4 \cb1 \
+\cb3         \cf5 head\cf4 .\cf5 data\cf4  = \cf7 0\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf7 1\cf4 \cb1 \
+\cb3     \cf5 carry\cf4  = \cf5 rec\cf6 (\cf5 head\cf6 )\cf4 \cb1 \
+\cb3     \cf2 if\cf4  \cf5 carry\cf4  == \cf7 1\cf6 :\cf4 \cb1 \
+\cb3         \cf5 node\cf4  = \cf5 Node\cf6 (\cf7 1\cf6 )\cf4 \cb1 \
+\cb3         \cf5 node\cf4 .\cf2 next\cf4  = \cf5 head\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 node\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 head\cf4 \cb1 \
+Time complexity - O(N)\
+Space complexity - O(N)\
+\
+2) Find pairs with given sum in doubly linked list\
+\cf2 \cb3 def\cf4  \cf5 findPairs\cf6 (\cf5 head\cf6 :\cf4  \cf5 Node\cf6 ,\cf4  \cf5 k\cf6 :\cf4  \cf2 int\cf6 )\cf4  -> \cf6 [[\cf2 int\cf6 ]]:\cf4 \cb1 \
+\cb3     \cf5 temp1\cf4  = \cf5 head\cf4 \cb1 \
+\cb3     \cf5 arr\cf4  = \cf6 []\cf4 \cb1 \
+\cb3     \cf2 while\cf4  \cf5 temp1\cf6 :\cf4 \cb1 \
+\cb3         \cf5 temp2\cf4  = \cf5 temp1\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf2 while\cf4  \cf5 temp2\cf6 :\cf4 \cb1 \
+\cb3             \cf2 if\cf4  \cf5 temp1\cf4 .\cf5 data\cf4  + \cf5 temp2\cf4 .\cf5 data\cf4  == \cf5 k\cf4  \cf2 and\cf4  \cf5 temp1\cf4 .\cf5 data\cf4  + \cf5 temp2\cf4 .\cf5 data\cf4  <= \cf5 k\cf6 :\cf4 \cb1 \
+\cb3                 \cf5 arr\cf4 .\cf5 append\cf6 ([\cf5 temp1\cf4 .\cf5 data\cf6 ,\cf5 temp2\cf4 .\cf5 data\cf6 ])\cf4 \cb1 \
+\cb3             \cf5 temp2\cf4  = \cf5 temp2\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf5 temp1\cf4  = \cf5 temp1\cf4 .\cf2 next\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 arr\cf4 \cb1 \
+Time complexity - nearly O(n^2) - not exactly O(n^2)\
+Space = O(N)\
+\
+\cf2 \cb3 def\cf4  \cf5 findPairs\cf6 (\cf5 head\cf6 :\cf4  \cf5 Node\cf6 ,\cf4  \cf5 k\cf6 :\cf4  \cf2 int\cf6 )\cf4  -> \cf6 [[\cf2 int\cf6 ]]:\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 findtail\cf6 (\cf5 head\cf6 ):\cf4 \cb1 \
+\cb3         \cf5 tail\cf4  = \cf5 head\cf4 \cb1 \
+\cb3         \cf2 while\cf4  \cf5 tail\cf4 .\cf2 next\cf6 :\cf4 \cb1 \
+\cb3             \cf5 tail\cf4  = \cf5 tail\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 tail\cf4 \cb1 \
+\cb3     \cf5 arr\cf4  = \cf6 []\cf4 \cb1 \
+\cb3     \cf5 left\cf4  = \cf5 head\cf4 \cb1 \
+\cb3     \cf5 right\cf4  = \cf5 findtail\cf6 (\cf5 head\cf6 )\cf4 \cb1 \
+\cb3     \cf2 while\cf4  \cf5 left\cf4 .\cf5 data\cf4  < \cf5 right\cf4 .\cf5 data\cf6 :\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 left\cf4 .\cf5 data\cf4  + \cf5 right\cf4 .\cf5 data\cf4  == \cf5 k\cf6 :\cf4 \cb1 \
+\cb3             \cf5 arr\cf4 .\cf5 append\cf6 ([\cf5 left\cf4 .\cf5 data\cf6 ,\cf5 right\cf4 .\cf5 data\cf6 ])\cf4 \cb1 \
+\cb3             \cf5 left\cf4  = \cf5 left\cf4 .\cf2 next\cf4 \cb1 \
+\cb3             \cf5 right\cf4  = \cf5 right\cf4 .\cf5 prev\cf4 \cb1 \
+\cb3         \cf2 elif\cf4  \cf5 left\cf4 .\cf5 data\cf4  + \cf5 right\cf4 .\cf5 data\cf4  < \cf5 k\cf6 :\cf4 \cb1 \
+\cb3             \cf5 left\cf4  = \cf5 left\cf4 .\cf2 next\cf4 \cb1 \
+\cb3         \cf2 else\cf6 :\cf4 \cb1 \
+\cb3             \cf5 right\cf4  = \cf5 right\cf4 .\cf5 prev\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 arr\cf4 \cb1 \
+Time complexity - O(N) to find tail + O(N) - for while for all nodes - O(2N)\
+Space complexity - in order to solve this O(1) in order to return answer - depends on number of pairs\
+\
+Recursion\
+3) Find pow(x,n)\
+Recursion - \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf8 \cb9 class\cf4  \cf10 Solution\cf4 (\cf10 object\cf4 ):\cb1 \
+\cb9     \cf8 def\cf4  \cf11 myPow\cf4 (\cf12 self\cf4 , \cf12 x\cf4 , \cf12 n\cf4 ):\cb1 \
+\cb9         \cf13 """\cf4 \cb1 \
+\cf13 \cb9         :type x: float\cf4 \cb1 \
+\cf13 \cb9         :type n: int\cf4 \cb1 \
+\cf13 \cb9         :rtype: float\cf4 \cb1 \
+\cf13 \cb9         """\cf4 \cb1 \
+\cb9         \cf8 def\cf4  \cf11 rec\cf4 (\cf12 x\cf4 ,\cf12 n\cf4 ):\cb1 \
+\cb9             \cf14 if\cf4  n == \cf15 0\cf4 :\cb1 \
+\cb9                 \cf14 return\cf4  \cf15 1\cf4 \cb1 \
+\cb9             \cf14 elif\cf4  n < \cf15 0\cf4 :\cb1 \
+\cb9                 \cf14 return\cf4  \cf15 1\cf4  / (x * rec(x, -n-\cf15 1\cf4 ))\cb1 \
+\cb9             \cf14 elif\cf4  n % \cf15 2\cf4  == \cf15 0\cf4 :\cb1 \
+\cb9                 a = rec(x,n//\cf15 2\cf4 )\cb1 \
+\cb9                 \cf14 return\cf4  a * a\cb1 \
+\cb9             \cf14 else\cf4 :\cb1 \
+\cb9                 \cf14 return\cf4  x * rec(x,n-\cf15 1\cf4 )\cb1 \
+\cb9         \cf14 return\cf4  rec(x,n)\cb1 \
+\
+Space complexity = O(logn)\
+Time complexity = O(logn)\
+\
+Iterative\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 \cb3 def\cf4  \cf5 myPow\cf6 (\cf5 x\cf6 :\cf4  \cf2 float\cf6 ,\cf4  \cf5 n\cf6 :\cf4  \cf2 int\cf6 )\cf4  -> \cf2 float\cf6 :\cf4 \cb1 \
+\cb3     \cf2 if\cf4  \cf5 x\cf4  == \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf7 0\cf4 \cb1 \
+\cb3     \cf2 elif\cf4  \cf5 b\cf4  == \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf7 1\cf4 \cb1 \
+\cb3     \cf2 elif\cf4  \cf5 n\cf4  < \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf5 n\cf4  = -\cf5 n\cf4 \cb1 \
+\cb3         \cf5 x\cf4  = \cf7 1\cf4  / \cf5 x\cf4 \cb1 \
+\cb3     \cf5 a\cf4  = \cf7 1\cf4 \cb1 \
+\cb3     \cf2 while\cf4  \cf5 n\cf4  > \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 n\cf4  % \cf7 2\cf4  == \cf7 0\cf6 :\cf4 \cb1 \
+\cb3             \cf5 x\cf4  = \cf5 x\cf4  * \cf5 x\cf4 \cb1 \
+\cb3             \cf5 n\cf4  = \cf5 n\cf4  // \cf7 2\cf4 \cb1 \
+\cb3         \cf2 else\cf6 :\cf4 \cb1 \
+\cb3             \cf5 n\cf4  = \cf5 n\cf4  - \cf7 1\cf4 \cb1 \
+\cb3             \cf5 a\cf4  = \cf5 a\cf4  * \cf5 x\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 a\cf4 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf4 \
+Time = O(l\'f6gn)\
+Space = 1\
+\
+4) Reverse a stack using Recursion\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 \cb3 def\cf4  \cf5 reverseStack\cf6 (\cf5 stack\cf6 :\cf4  \cf5 List\cf6 [\cf2 int\cf6 ])\cf4  -> \cf2 None\cf6 :\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 rec\cf6 (\cf5 stack\cf6 ,\cf5 start\cf6 ,\cf5 end\cf6 ):\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf5 start\cf4  >= \cf5 end\cf6 :\cf4 \cb1 \
+\cb3             \cf2 return\cf4  \cf5 stack\cf4 \cb1 \
+\cb3         \cf5 temp\cf4  = \cf5 stack\cf6 [\cf5 start\cf6 ]\cf4 \cb1 \
+\cb3         \cf5 stack\cf6 [\cf5 start\cf6 ]\cf4  = \cf5 stack\cf6 [\cf5 end\cf6 ]\cf4 \cb1 \
+\cb3         \cf5 stack\cf6 [\cf5 end\cf6 ]\cf4  = \cf5 temp\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 rec\cf6 (\cf5 stack\cf6 ,\cf5 start\cf4 +\cf7 1\cf6 ,\cf5 end\cf7 -1\cf6 )\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 rec\cf6 (\cf5 stack\cf6 ,\cf7 0\cf6 ,\cf2 len\cf6 (\cf5 stack\cf6 )\cf7 -1\cf6 )\cf4 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf4 Time = O(l\'f6gn)\
+Space = O(l\'f6gn)\
+\
+5) Sort a stack using recursion\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 \cb3 def\cf4  \cf5 sortStack\cf6 (\cf5 stack\cf6 ):\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 insert\cf6 (\cf5 e\cf6 ,\cf5 stack\cf6 ):\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf2 not\cf4  \cf5 stack\cf4  \cf2 or\cf4  \cf5 stack\cf6 [\cf7 -1\cf6 ]\cf4  <= \cf5 e\cf6 :\cf4 \cb1 \
+\cb3             \cf5 stack\cf4 .\cf5 append\cf6 (\cf5 e\cf6 )\cf4 \cb1 \
+\cb3             \cf2 return\cf4 \cb1 \
+\cb3         \cf5 current\cf4  = \cf5 stack\cf4 .\cf5 pop\cf6 ()\cf4 \cb1 \
+\cb3         \cf5 insert\cf6 (\cf5 e\cf6 ,\cf5 stack\cf6 )\cf4 \cb1 \
+\cb3         \cf5 stack\cf4 .\cf5 append\cf6 (\cf5 current\cf6 )\cf4 \cb1 \
+\cb3     \cf2 def\cf4  \cf5 rec\cf6 (\cf5 stack\cf6 ):\cf4 \cb1 \
+\cb3         \cf2 if\cf4  \cf2 not\cf4  \cf5 stack\cf6 :\cf4 \cb1 \
+\cb3             \cf2 return\cf4  \cf5 stack\cf4 \cb1 \
+\cb3         \cf5 e\cf4  = \cf5 stack\cf4 .\cf5 pop\cf6 ()\cf4 \cb1 \
+\cb3         \cf5 rec\cf6 (\cf5 stack\cf6 )\cf4 \cb1 \
+\cb3         \cf5 insert\cf6 (\cf5 e\cf6 ,\cf5 stack\cf6 )\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf5 stack\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 rec\cf6 (\cf5 stack\cf6 )\cf4 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf4 Time = O(2N)\
+Space = recursion stack space - O(2N)\
+\
+\
+\
+Bit Manipulation\
+1) Check if a number is power of 2 or not\
+\cf8 \cb9 class\cf4  \cf10 Solution\cf4 (\cf10 object\cf4 ):\cb1 \
+\cb9     \cf8 def\cf4  \cf11 isPowerOfTwo\cf4 (\cf12 self\cf4 , \cf12 n\cf4 ):\cb1 \
+\cb9         \cf14 if\cf4  n <= \cf15 0\cf4 :\cb1 \
+\cb9             \cf14 return\cf4  \cf8 False\cf4 \cb1 \
+\cb9         \cf14 return\cf4  (n&(n-\cf15 1\cf4 )) == \cf15 0\cf4 \cb1 \
+Time = Space = O(1)\
+\
+2) Check whether k-th bit is set or not\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf2 \cb3 def\cf4  \cf5 isKthBitSet\cf6 (\cf5 n\cf6 :\cf4  \cf2 int\cf6 ,\cf4  \cf5 k\cf6 :\cf4  \cf2 int\cf6 )\cf4  -> \cf2 bool\cf6 :\cf4 \cb1 \
+\cb3     \cf5 x\cf4  = \cf5 n\cf4  & \cf6 (\cf7 1\cf4  << \cf6 (\cf5 k\cf7 -1\cf6 ))\cf4 \cb1 \
+\cb3     \cf2 if\cf4  \cf5 x\cf4  != \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf2 True\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf2 False\cf4 \cb1 \
+Time = Space = O(1)\
+\
+3) Check if a number is odd or even\
+\cf2 \cb3 def\cf4  \cf5 oddEven\cf6 (\cf5 N\cf4  \cf6 :\cf4  \cf2 int\cf6 )\cf4  -> \cf2 str\cf6 :\cf4 \cb1 \
+\cb3     \cf5 x\cf4  = \cf5 N\cf4  & \cf7 1\cf4 \cb1 \
+\cb3     \cf2 if\cf4  \cf5 x\cf4  == \cf7 0\cf6 :\cf4 \cb1 \
+\cb3         \cf2 return\cf4  \cf16 "even"\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf16 "odd"\cf4 \cb1 \
+\
+4) Swap 2 numbers without using a third variable\
+\cf2 \cb3 def\cf4  \cf5 swapNumber\cf6 (\cf5 a\cf6 ,\cf4  \cf5 b\cf6 )\cf4  -> \cf2 None\cf6 :\cf4 \cb1 \
+\cb3     \cf5 a\cf4  = \cf5 a\cf4  ^ \cf5 b\cf4 \cb1 \
+\cb3     \cf5 b\cf4  = \cf5 a\cf4  ^ \cf5 b\cf4 \cb1 \
+\cb3     \cf5 a\cf4  = \cf5 a\cf4  ^ \cf5 b\cf4 \cb1 \
+\cb3     \cf2 return\cf4  \cf5 a\cf6 ,\cf4  \cf5 b\cf4 \cb1 \
+\
+\
+\
+\
+Graphs\
+1) Flood Fill\
+\pard\pardeftab720\partightenfactor0
+
+\fs26 \cf8 \cb9 class\cf4  \cf10 Solution\cf4 (\cf10 object\cf4 ):\cb1 \
+\cb9     \cf8 def\cf4  \cf11 floodFill\cf4 (\cf12 self\cf4 , \cf12 image\cf4 , \cf12 sr\cf4 , \cf12 sc\cf4 , \cf12 color\cf4 ):\cb1 \
+\cb9         \cf13 """\cf4 \cb1 \
+\cf13 \cb9         :type image: List[List[int]]\cf4 \cb1 \
+\cf13 \cb9         :type sr: int\cf4 \cb1 \
+\cf13 \cb9         :type sc: int\cf4 \cb1 \
+\cf13 \cb9         :type color: int\cf4 \cb1 \
+\cf13 \cb9         :rtype: List[List[int]]\cf4 \cb1 \
+\cf13 \cb9         """\cf4 \cb1 \
+\cb9         n = \cf11 len\cf4 (image)\cb1 \
+\cb9         m = \cf11 len\cf4 (image[\cf15 0\cf4 ])\cb1 \
+\cb9         visited = [i[:] \cf14 for\cf4  i \cf8 in\cf4  image]\cb1 \
+\cb9         queue = deque()\cb1 \
+\cb9         ini = image[sr][sc]\cb1 \
+\cb9         visited[sr][sc] = color\cb1 \
+\cb9         queue.append((sr,sc))\cb1 \
+\cb9         drow = [-\cf15 1\cf4 ,\cf15 0\cf4 ,\cf15 1\cf4 ,\cf15 0\cf4 ]\cb1 \
+\cb9         dcol = [\cf15 0\cf4 ,\cf15 1\cf4 ,\cf15 0\cf4 ,-\cf15 1\cf4 ]\cb1 \
+\cb9         \cf14 while\cf4  queue:\cb1 \
+\cb9             (row,col) = queue.popleft()\cb1 \
+\cb9             \cf14 for\cf4  i \cf8 in\cf4  \cf11 range\cf4 (\cf15 4\cf4 ):\cb1 \
+\cb9                 nrow = row + drow[i]\cb1 \
+\cb9                 ncol = col + dcol[i]\cb1 \
+\cb9                 \cf14 if\cf4  nrow >= \cf15 0\cf4  \cf8 and\cf4  ncol >= \cf15 0\cf4  \cf8 and\cf4  nrow < n \cf8 and\cf4  ncol < m \cf8 and\cf4  visited[nrow][ncol] != color \cf8 and\cf4  image[nrow][ncol] == ini:\cb1 \
+\cb9                     visited[nrow][ncol]= color\cb1 \
+\cb9                     queue.append((nrow,ncol))\cb1 \
+\cb9         \cf14 return\cf4  visited\cb1 \
+\
+\
+2) Number of enclaves\
+\cf8 \cb9 def\cf4  \cf11 dfs\cf4 (\cf12 row\cf4 ,\cf12 col\cf4 ,\cf12 grid\cf4 ,\cf12 vis\cf4 ):\cb1 \
+\cb9             vis[row][col] = \cf15 1\cf4 \cb1 \
+\cb9             drow = [-\cf15 1\cf4 ,\cf15 0\cf4 ,\cf15 1\cf4 ,\cf15 0\cf4 ]\cb1 \
+\cb9             dcol = [\cf15 0\cf4 ,-\cf15 1\cf4 ,\cf15 0\cf4 ,\cf15 1\cf4 ]\cb1 \
+\cb9             \cf14 for\cf4  i \cf14 in\cf4  \cf11 range\cf4 (\cf15 4\cf4 ):\cb1 \
+\cb9                 nrow = row + drow[i]\cb1 \
+\cb9                 ncol = col + dcol[i]\cb1 \
+\cb9                 \cf14 if\cf4  nrow >= \cf15 0\cf4  \cf8 and\cf4  nrow < n \cf8 and\cf4  ncol >= \cf15 0\cf4  \cf8 and\cf4  ncol < m \cf8 and\cf4  \cf8 not\cf4  vis[nrow][ncol] \cf8 and\cf4  grid[nrow][ncol] == \cf15 1\cf4 :\cb1 \
+\cb9                     dfs(nrow,ncol,grid,vis)\cb1 \
+\cb9         n = \cf11 len\cf4 (grid)\cb1 \
+\cb9         m = \cf11 len\cf4 (grid[\cf15 0\cf4 ])\cb1 \
+\cb9         visited = [[\cf15 0\cf4 ]*m \cf14 for\cf4  i \cf14 in\cf4  \cf11 range\cf4 (n)]\cb1 \
+\cb9         \cf14 for\cf4  i \cf14 in\cf4  \cf11 range\cf4 (m):\cb1 \
+\cb9             \cf14 if\cf4  \cf8 not\cf4  visited[\cf15 0\cf4 ][i] \cf8 and\cf4  grid[\cf15 0\cf4 ][i] == \cf15 1\cf4 :\cb1 \
+\cb9                 dfs(\cf15 0\cf4 ,i,grid,visited)\cb1 \
+\cb9             \cf14 if\cf4  \cf8 not\cf4  visited[n-\cf15 1\cf4 ][i] \cf8 and\cf4  grid[n-\cf15 1\cf4 ][i] == \cf15 1\cf4 :\cb1 \
+\cb9                 dfs(n-\cf15 1\cf4 ,i,grid,visited)\cb1 \
+\cb9         \cb1 \
+\cb9         \cf14 for\cf4  j \cf14 in\cf4  \cf11 range\cf4 (n):\cb1 \
+\cb9             \cf14 if\cf4  \cf8 not\cf4  visited[j][\cf15 0\cf4 ] \cf8 and\cf4  grid[j][\cf15 0\cf4 ] == \cf15 1\cf4 :\cb1 \
+\cb9                 dfs(j,\cf15 0\cf4 ,grid,visited)\cb1 \
+\cb9             \cf14 if\cf4  \cf8 not\cf4  visited[j][m-\cf15 1\cf4 ] \cf8 and\cf4  grid[j][m-\cf15 1\cf4 ] == \cf15 1\cf4 :\cb1 \
+\cb9                 dfs(j,m-\cf15 1\cf4 ,grid,visited)\cb1 \
+\
+\cb9         count = \cf15 0\cf4 \cb1 \
+\cb9         \cf14 for\cf4  i \cf14 in\cf4  \cf11 range\cf4 (n):\cb1 \
+\cb9             \cf14 for\cf4  j \cf14 in\cf4  \cf11 range\cf4 (m):\cb1 \
+\cb9                 \cf14 if\cf4  \cf8 not\cf4  visited[i][j] \cf8 and\cf4  grid[i][j] == \cf15 1\cf4 :\cb1 \
+\cb9                     count += \cf15 1\cf4 \cb1 \
+\cb9         \cf14 return\cf4  count\cb1 \
+\
+3) Distinct Island\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf5 \cb3 import sys\
+from typing import List\
+sys.setrecursionlimit(10**8)\
+class Solution:\
+    def countDistinctIslands(self, arr : List[List[int]]) -> int:\
+        def dfs(row,col,baserow,basecol,vis,arr,ans):\
+            vis[row][col] = 1\
+            ans.append((row-baserow,col-basecol))\
+            for dx,dy in direction:\
+                nrow = row + dx\
+                ncol = col + dy\
+                if nrow >= 0 and ncol < m and ncol >= 0 and nrow < n and not vis[nrow][ncol] and arr[nrow][ncol] == 1:\
+                    dfs(nrow,ncol,baserow,basecol,vis,arr,ans)\
+                    \
+        direction = [(-1,0),(1,0),(0,-1),(0,1)]\
+        visited = [[0]*m for i in range(n)]\
+        st = set()\
+        for i in range(n):\
+            for j in range(m):\
+                if not visited[i][j] and arr[i][j] == 1:\
+                    ans = []\
+                    dfs(i,j,i,j,visited,arr,ans)\
+                    st.add(tuple(ans))\
+        return len(st)
+\fs26 \cf4 \cb1 \
+\
+Time = O(n*m)\
+Space = O(n*m)\
+\
+4) Bipartite Graph\
+\pard\pardeftab720\partightenfactor0
+\cf8 \cb9 class\cf4  \cf10 Solution\cf4 (\cf10 object\cf4 ):\cb1 \
+\cb9     \cf8 def\cf4  \cf11 isBipartite\cf4 (\cf12 self\cf4 , \cf12 graph\cf4 ):\cb1 \
+\cb9         \cf8 def\cf4  \cf11 dfs\cf4 (\cf12 node\cf4 ,\cf12 col\cf4 ,\cf12 color\cf4 ,\cf12 graph\cf4 ):\cb1 \
+\cb9             color[node] = col\cb1 \
+\cb9             \cf14 for\cf4  neighbour \cf14 in\cf4  graph[node]:\cb1 \
+\cb9                 \cf14 if\cf4  color[neighbour] == -\cf15 1\cf4 :\cb1 \
+\cb9                     \cf14 if\cf4  \cf8 not\cf4  dfs(neighbour,\cf14 not\cf4  col,color,graph):\cb1 \
+\cb9                         \cf14 return\cf4  \cf8 False\cf4 \cb1 \
+\cb9                 \cf14 elif\cf4  color[neighbour] == col:\cb1 \
+\cb9                     \cf14 return\cf4  \cf8 False\cf4 \cb1 \
+\cb9             \cf14 return\cf4  \cf8 True\cf4 \cb1 \
+\cb9         n = \cf11 len\cf4 (graph)\cb1 \
+\cb9         color = [-\cf15 1\cf4 ] * n\cb1 \
+\cb9         \cf14 for\cf4  i \cf14 in\cf4  \cf11 range\cf4 (n):\cb1 \
+\cb9             \cf14 if\cf4  color[i] == -\cf15 1\cf4 :\cb1 \
+\cb9                 \cf14 if\cf4  \cf8 not\cf4  dfs(i,\cf15 0\cf4 ,color,graph):\cb1 \
+\cb9                     \cf14 return\cf4  \cf8 False\cf4 \cb1 \
+\cb9         \cf14 return\cf4  \cf8 True\cf4 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf5 \cb3 \
+Time = O(V+2E)\
+Space = O(V)\
+\
+\pard\pardeftab720\partightenfactor0
+\cf17 \cb18 5) Cycle detection in undirected graph\
+BFS\
+class Solution:\
+	def isCycle(self, V: int, adj: List[List[int]]) -> bool:\
+	    def bfsDetectCycle(src,visited,adj):\
+	        visited[src] = 1\
+	        queue = deque()\
+	        queue.append((src,-1))\
+	        while queue:\
+	            node,parent = queue.popleft()\
+	            for neighbour in adj[node]:\
+	                if not visited[neighbour]:\
+	                    visited[neighbour] =1\
+	                    queue.append((neighbour,node))\
+	                elif parent != neighbour:\
+	                    return True\
+	        return False\
+	    visited = [0] * V\
+	    for i in range(V):\
+	        if not visited[i]:\
+    	        if (bfsDetectCycle(i,visited,adj)):\
+    	            return True\
+	    return False\cf5 \cb3 \
+\
+Time Complexity O(N + 2E)\
+Space = O(N) queue + O(N) visited\
+\
+\
+DFS:\
+class Solution:\
+	def isCycle(self, V: int, adj: List[List[int]]) -> bool:\
+	    def dfsDetectCycle(node,parent,visited,adj):\
+	        visited[node] = 1\
+	        for neighbour in adj[node]:\
+	            if not visited[neighbour]:\
+	                if (dfsDetectCycle(neighbour,node,visited,adj)):\
+	                    return True\
+	            elif neighbour != parent:\
+	                return True\
+	        return False\
+	    visited = [0] * V\
+	    for i in range(V):\
+	        if not visited[i]:\
+	            if dfsDetectCycle(i,-1,visited,adj):\
+	                return True\
+	    return False\
+\
+Space complexity = O(N)recursion stack space + O(N) visited array\
+Time complexity = O(N+2E)dfs traversal + O(N) for for loop (But it doesn\'92t call for all nodes)\cf6 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
